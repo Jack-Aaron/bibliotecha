@@ -1,15 +1,16 @@
 import React from 'react';
 import Search from '../Search';
+import Spacer from '../Spacer';
 import Results from '../Results';
 
 function Body(props) {
-    return (
-      <>
-        <Search />
-        <Results />
-      </>
-    );
-  }
-  
-  export default Body;
-  
+  return (
+    <>
+      <Search />
+      <Spacer />
+      <Results />
+    </>
+  );
+}
+
+export default Body;

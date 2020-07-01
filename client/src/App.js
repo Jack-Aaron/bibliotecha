@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
+import Spacer from './components/Spacer';
 import Body from './components/Body';
 import Footer from './components/Footer';
 // import logo from './logo.svg';
@@ -10,6 +11,7 @@ function App() {
   return (
     <>
       <Header />
+      <Spacer />
       <Body />
       <Footer />
     </>
