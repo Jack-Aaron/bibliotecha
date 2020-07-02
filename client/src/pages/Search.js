@@ -27,7 +27,7 @@ function Search(props) {
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.searchquery) {
-      API.searchBooks({
+      API.searchBooks(formObject.searchquery, {
         searchquery: formObject.searchquery
       }).then(res => {
         setSearchResultsState(res.data);
