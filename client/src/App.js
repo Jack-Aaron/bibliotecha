@@ -11,39 +11,18 @@ import './App.css';
 
 const App = (props) => {
 
-
   return (
-    <Router>
-      <>
-        <Header />
-        <Spacer />
-        <Switch>
-          <Route exact path='/' component={Search}
-          // render={(props) => (
-          // <Login setUserData={setUserData} userData={userData} />
-          // )} 
-          />
-          {/* <Route exact path='/signup' component={SignUp} /> */}
-
-          <Route exact path="/Search" component={Search}
-          // render={(props) => (
-          //   userData.username === "" ? <Redirect to='/' /> :
-          //     <Dashboard setUserData={setUserData} 
-          />
-          {/* )} */}
-          {/* /> */}
-          {/* <Route exact path="/Saved" component={Savedpage} */}
-          {/* // render={(props) => ( */}
-          {/* //   userData.username === "" ? <Redirect to='/' /> :
-          //     <NewPet setUserData={setUserData} />
-          // )}
-          // /> */}
-
-
-        </Switch>
-        <Footer />
-      </>
-    </Router>
+    // <Router>
+    <>
+      <Header />
+      <Spacer />
+      {/* <Switch> */}
+      <Search />
+      {/* <Route exact path='/' component={Search} /> */}
+      {/* </Switch> */}
+      <Footer />
+    </>
+    // </Router>
   );
 }
 

@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 
 function Results(props) {
 
-    // console.log(props.searchResultsState);
+    console.log(props);
 
     return (
         <>
@@ -18,13 +18,13 @@ function Results(props) {
                         <Card.Title>Results</Card.Title>
                         <Row>
                             <Col xs='12'>
-                                {/* {props.searchResultsState.map((book) => (<BookCard
-                                    title={book.name}
-                                    authors={[book.authors]}
-                                    description={book.description}
-                                    image={book.image}
-                                    link={book.link}
-                                />))} */}
+                                {props.searchResultsState.items.map(({volumeInfo}) => (<BookCard
+                                    title={volumeInfo.title}
+                                    authors={[volumeInfo.authors]}
+                                    description={volumeInfo.description}
+                                    image={volumeInfo.imageLinks.thumbnail}
+                                    link={volumeInfo.infoLink}
+                                />))}
                             </Col>
                         </Row>
                     </Card.Body>

@@ -14,9 +14,13 @@ function Searchform(props) {
                         <Card.Title>Book Search</Card.Title>
                         <Form>
                             <Form.Control type='text' placeholder='Book title, author, etc.'
-                                onChange={props.handleChange} />
+                                name="searchquery"
+                                onChange={props.handleChange}
+                                value={props.searchQueryValue}
+                                className='form-control'
+                            />
                             <Button variant='primary' type='submit'
-                                onClick={props.searchGoogleBooks()}
+                                onClick={props.handleFormSubmit}
                                 style={{ float: 'right', margin: 10 }}> Search
   </Button>
                         </Form>
