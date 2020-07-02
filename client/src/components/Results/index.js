@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import API from '../../utils/API';
+import React from 'react';
 import BookCard from '../BookCard';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
@@ -8,14 +7,7 @@ import Row from 'react-bootstrap/Row';
 
 function Results(props) {
 
-    const [booksState, setBooksState] = useState([]);
-
-    useEffect(() => {
-        API.getBooks().then((res) => {
-            console.log(res.data);
-            setBooksState(res.data);
-        });
-    }, []);
+    // console.log(props.searchResultsState);
 
     return (
         <>
@@ -26,13 +18,13 @@ function Results(props) {
                         <Card.Title>Results</Card.Title>
                         <Row>
                             <Col xs='12'>
-                                {booksState.map((book) => (<BookCard
+                                {/* {props.searchResultsState.map((book) => (<BookCard
                                     title={book.name}
                                     authors={[book.authors]}
                                     description={book.description}
                                     image={book.image}
                                     link={book.link}
-                                />))}
+                                />))} */}
                             </Col>
                         </Row>
                     </Card.Body>
