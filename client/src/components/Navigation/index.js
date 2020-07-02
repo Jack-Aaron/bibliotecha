@@ -7,7 +7,7 @@ import NavbarBrand from '../../../src/navbarbrand.png';
 function Navigation(props) {
     return (
         <>
-            <Navbar bg='light' expand='xl'>
+            <Navbar bg='light'>
                 <Navbar.Brand href='#search'>
                     <Image src={NavbarBrand} style={{ maxHeight: 40 }} fluid></Image>
                     </Navbar.Brand>
