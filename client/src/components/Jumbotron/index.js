@@ -8,7 +8,7 @@ function Heading(props) {
                 textAlign: 'center'
             }}>
                 <h1>Google Books Search</h1>
-                <h4>Search for and Save your favorite books!</h4>
+                <h3>Search for and Save your favorite books!</h3>
             </Jumbotron>
         </>
     );

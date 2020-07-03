@@ -6,10 +6,14 @@ const bookSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    subtitle: {
+        type: String,
+        default: ''
+    },
     // string for author(s)
     authors: {
         type: String,
-        default: ''
+        default: []
     },
     // book description
     description: {

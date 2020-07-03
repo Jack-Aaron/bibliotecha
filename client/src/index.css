@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1 {
+  font-size: calc(1em + 6vmin) !important
+}
+
+h2 {
+  font-size: calc(1em + 2.82vmin) !important
+}
+
+h3 {
+  font-size: calc(1em + 1.73vmin) !important
+}
+
+h4 {
+  font-size: calc(1em + 1vmin) !important
+}
+
+h5 {
+  font-size: calc(1em + 0.45vmin) !important
+}
+
+h6 {
+  font-size: calc(1em + .27vmin) !important
+}
