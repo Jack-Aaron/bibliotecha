@@ -5,6 +5,12 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 function BookCard(props) {
+
+    const viewBtnClick = () => {
+        window.open(props.link)
+    }
+
+
     return (
         <>
             <Card>
@@ -17,12 +23,16 @@ function BookCard(props) {
                         </Col>
                         <Col xs='auto'>
                             <Row style={{ float: 'right', marginRight: '0.66vmin' }}>
-
-                                <Button style={{ marginRight: '0.33vmin' }}>View</Button>
-
-
-                                <Button>Save</Button>
-
+                                <Button
+                                    className='ViewBtn'
+                                    onClick={viewBtnClick.bind()}
+                                    style={{ marginRight: '0.33vmin' }}
+                                >View
+                                </Button>
+                                <Button
+                                    className='SaveBtn'
+                                >Save
+                                </Button>
                             </Row>
                         </Col>
                     </Row>
