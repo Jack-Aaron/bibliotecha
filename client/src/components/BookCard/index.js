@@ -1,4 +1,6 @@
 import React from 'react';
+import { useHistory, useLocation } from "react-router-dom"
+import API from '../../utils/API';
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
@@ -6,10 +8,35 @@ import Row from 'react-bootstrap/Row';
 
 function BookCard(props) {
 
-    const viewBtnClick = () => {
+    // let history = useHistory();
+    // let location = useLocation();
+    // let { from } = location.state || { from: { pathname: "/" } };
+
+    const viewBook = () => {
+      
         window.open(props.link)
     }
 
+
+
+    const saveBook = () => {
+        let bookId = props.id;
+        console.log(props.id)
+
+        // API.searchBooksById()
+        // API.saveBook({
+        //     title: form.name,
+        //     subtitle: form.calPer,
+        //     authors: form.ozPer,
+        //     description: form.ing,
+        //     image: form.nut,
+        //     link: 
+        //     id:
+
+        // })
+        //     .then(res => history.replace(from))
+        //     .catch(err => console.log(err))
+    }
 
     return (
         <>
@@ -25,12 +52,13 @@ function BookCard(props) {
                             <Row style={{ float: 'right', marginRight: '0.66vmin' }}>
                                 <Button
                                     className='ViewBtn'
-                                    onClick={viewBtnClick.bind()}
+                                    onClick={viewBook.bind()}
                                     style={{ marginRight: '0.33vmin' }}
                                 >View
                                 </Button>
                                 <Button
                                     className='SaveBtn'
+                                onClick={saveBook}
                                 >Save
                                 </Button>
                             </Row>

@@ -30,6 +30,12 @@ const bookSchema = new mongoose.Schema({
         type: String,
         default: '',
         unique: true
+    },
+    id: {
+        type: String,
+        default: '',
+        unique: true,
+        required: true
     }
 });
 

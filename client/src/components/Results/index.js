@@ -15,13 +15,14 @@ function Results(props) {
                     <Card>
                         <Card.Body>
                             <Card.Title>Results</Card.Title>
-                            {props.searchResultsState.items.map(({ volumeInfo }) => (<BookCard
-                                title={volumeInfo.title}
-                                subtitle={volumeInfo.subtitle}
-                                authors={volumeInfo.authors}
-                                description={volumeInfo.description}
-                                image={volumeInfo.imageLinks.thumbnail}
-                                link={volumeInfo.infoLink}
+                            {props.searchResultsState.items.map((book) => (<BookCard
+                                title={book.volumeInfo.title}
+                                subtitle={book.volumeInfo.subtitle}
+                                authors={book.volumeInfo.authors}
+                                description={book.volumeInfo.description}
+                                image={book.volumeInfo.imageLinks.thumbnail}
+                                link={book.volumeInfo.infoLink}
+                                id={book.id}
                             />))}
                         </Card.Body>
                     </Card>
