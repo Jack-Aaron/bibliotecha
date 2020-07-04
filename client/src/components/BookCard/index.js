@@ -8,34 +8,35 @@ import Row from 'react-bootstrap/Row';
 
 function BookCard(props) {
 
-    // let history = useHistory();
-    // let location = useLocation();
-    // let { from } = location.state || { from: { pathname: "/" } };
-
     const viewBook = () => {
-      
         window.open(props.link)
     }
 
-
-
-    const saveBook = () => {
-        let bookId = props.id;
-        console.log(props.id)
-
-        // API.searchBooksById()
-        // API.saveBook({
-        //     title: form.name,
-        //     subtitle: form.calPer,
-        //     authors: form.ozPer,
-        //     description: form.ing,
-        //     image: form.nut,
-        //     link: 
-        //     id:
-
-        // })
-        //     .then(res => history.replace(from))
-        //     .catch(err => console.log(err))
+    const handleSaveClick = () => {
+        API.searchBooksById(props.id)
+            .then(res => {
+                console.log(res.data)
+                console.log({
+                    title: res.data.volumeInfo.title,
+                    subtitle: res.data.volumeInfo.subtitle,
+                    authors: res.data.volumeInfo.authors,
+                    description: res.data.volumeInfo.description,
+                    image: res.data.volumeInfo.imageLinks.thumbnail,
+                    link: res.data.volumeInfo.infoLink,
+                    googleId: res.data.id,
+                })
+                API.saveBook({
+                    title: res.data.volumeInfo.title,
+                    subtitle: res.data.volumeInfo.subtitle,
+                    authors: res.data.volumeInfo.authors,
+                    description: res.data.volumeInfo.description,
+                    image: res.data.volumeInfo.imageLinks.thumbnail,
+                    link: res.data.volumeInfo.infoLink,
+                    googleId: res.data.id,
+                }).then()
+                    .catch(err => console.log(err))
+            })
+            .catch(err => console.log(err))
     }
 
     return (
@@ -58,7 +59,7 @@ function BookCard(props) {
                                 </Button>
                                 <Button
                                     className='SaveBtn'
-                                onClick={saveBook}
+                                    onClick={handleSaveClick}
                                 >Save
                                 </Button>
                             </Row>

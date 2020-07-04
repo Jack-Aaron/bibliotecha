@@ -12,7 +12,7 @@ const bookSchema = new mongoose.Schema({
     },
     // string for author(s)
     authors: {
-        type: String,
+        type: Array,
         default: []
     },
     // book description
@@ -31,7 +31,7 @@ const bookSchema = new mongoose.Schema({
         default: '',
         unique: true
     },
-    id: {
+    googleId: {
         type: String,
         default: '',
         unique: true,

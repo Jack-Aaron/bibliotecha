@@ -6,8 +6,6 @@ import Container from 'react-bootstrap/Container';
 
 function Results(props) {
 
-    console.log(props);
-
     return (
         <>
             <Container>

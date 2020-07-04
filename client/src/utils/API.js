@@ -5,10 +5,10 @@ const IDBASEURL = 'https://www.googleapis.com/books/v1/volumes/';
 
 export default {
   getBooks: function (input) {
-    return axios.get(`/api/books${input}`);
+    return axios.get('/api/book/');
   },
-  saveBook: function (BookData) {
-    return axios.post('/api/books', BookData);
+  saveBook: function (bookData) {
+    return axios.post('/api/book/', bookData);
   },
   searchBooks: function (query) {
     return axios.get(BASEURL + query)
