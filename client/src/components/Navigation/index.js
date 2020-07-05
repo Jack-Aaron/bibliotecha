@@ -18,12 +18,12 @@ function Navigation(props) {
                             as={Link}
                             to={'/'}
                             className={window.location.pathname === '/' ? 'nav-link active' : 'nav-link'}
-                        >Search</Nav.Link>
+                        >Search Books</Nav.Link>
                         <Nav.Link
                             as={Link}
-                            to={'/saved'}
-                            className={window.location.pathname === '/saved' ? 'nav-link active' : 'nav-link'}
-                        >Saved</Nav.Link>
+                            to={'/savedbooks'}
+                            className={window.location.pathname === '/savedbooks' ? 'nav-link active' : 'nav-link'}
+                        >Saved Books</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

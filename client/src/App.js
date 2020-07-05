@@ -19,7 +19,7 @@ const App = (props) => {
         <Spacer />
         <Switch>
           <Route exact path='/' component={Search} />
-          <Route exact path='/saved' component={Saved} />
+          <Route exact path='/savedbooks' component={Saved} />
         </Switch>
         <Footer />
       </>

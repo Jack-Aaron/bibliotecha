@@ -6,38 +6,38 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-function BookCard(props) {
+function SearchedBookCard(props) {
 
-    const viewBook = () => {
-        window.open(props.link)
-    }
+    // const viewBook = () => {
+    //     window.open(props.link)
+    // }
 
-    const handleSaveClick = () => {
-        API.searchBooksById(props.id)
-            .then(res => {
-                console.log(res.data)
-                console.log({
-                    title: res.data.volumeInfo.title,
-                    subtitle: res.data.volumeInfo.subtitle,
-                    authors: res.data.volumeInfo.authors,
-                    description: res.data.volumeInfo.description,
-                    image: res.data.volumeInfo.imageLinks.thumbnail,
-                    link: res.data.volumeInfo.infoLink,
-                    googleId: res.data.id,
-                })
-                API.saveBook({
-                    title: res.data.volumeInfo.title,
-                    subtitle: res.data.volumeInfo.subtitle,
-                    authors: res.data.volumeInfo.authors,
-                    description: res.data.volumeInfo.description,
-                    image: res.data.volumeInfo.imageLinks.thumbnail,
-                    link: res.data.volumeInfo.infoLink,
-                    googleId: res.data.id,
-                }).then()
-                    .catch(err => console.log(err))
-            })
-            .catch(err => console.log(err))
-    }
+    // const handleSaveClick = () => {
+    //     API.searchBooksById(props.id)
+    //         .then(res => {
+    //             console.log(res.data)
+    //             console.log({
+    //                 title: res.data.volumeInfo.title,
+    //                 subtitle: res.data.volumeInfo.subtitle,
+    //                 authors: res.data.volumeInfo.authors,
+    //                 description: res.data.volumeInfo.description,
+    //                 image: res.data.volumeInfo.imageLinks.thumbnail,
+    //                 link: res.data.volumeInfo.infoLink,
+    //                 googleId: res.data.id,
+    //             })
+    //             API.saveBook({
+    //                 title: res.data.volumeInfo.title,
+    //                 subtitle: res.data.volumeInfo.subtitle,
+    //                 authors: res.data.volumeInfo.authors,
+    //                 description: res.data.volumeInfo.description,
+    //                 image: res.data.volumeInfo.imageLinks.thumbnail,
+    //                 link: res.data.volumeInfo.infoLink,
+    //                 googleId: res.data.id,
+    //             }).then()
+    //                 .catch(err => console.log(err))
+    //         })
+    //         .catch(err => console.log(err))
+    // }
 
     return (
         <>
@@ -53,13 +53,13 @@ function BookCard(props) {
                             <Row style={{ float: 'right', marginRight: '0.66vmin' }}>
                                 <Button
                                     className='ViewBtn'
-                                    onClick={viewBook.bind()}
+                                    // onClick={viewBook.bind()}
                                     style={{ marginRight: '0.33vmin' }}
                                 >View
                                 </Button>
                                 <Button
                                     className='SaveBtn'
-                                    onClick={handleSaveClick}
+                                    // onClick={handleSaveClick}
                                 >Save
                                 </Button>
                             </Row>
@@ -87,4 +87,4 @@ function BookCard(props) {
     );
 }
 
-export default BookCard;
+export default SearchedBookCard;

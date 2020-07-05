@@ -1,42 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import API from '../utils/API';
 import SavedBooks from '../components/SavedBooks';
 import Spacer from '../components/Spacer';
 
 function Saved(props) {
 
-    //   const [savedBooksState, setsavedBooksState] = useState({
-    //     items: [],
-    //     searchquery: ''
-    //   })
+    const [savedBooksState, setSavedBooksState] = useState([])
 
-    //   const initalForm = { searchquery: '' }
-    //   const [formObject, setFormObject] = useState(initalForm)
+    useEffect(() => {
+        API.getBooks()
+            .then(res => setSavedBooksState(res.data))
+            .catch(err => console.log(err))
 
-    //   function handleChange(event) {
-    //     const { name, value } = event.target;
-    //     console.log(event.target);
-    //     setFormObject({ ...formObject, [name]: value })
-    //   };
 
-    //   function handleFormSubmit(event) {
-    //     event.preventDefault();
-    //     if (formObject.searchquery) {
-    //       API.searchBooks(formObject.searchquery, {
-    //         searchquery: formObject.searchquery
-    //       }).then(res => {
-    //         setsavedBooksState(res.data);
-    //         setFormObject(initalForm)
-    //       })
-    //         .catch(err => console.log(err))
-    //     }
-    //   };
+    })
 
     return (
         <>
             <Spacer />
             <SavedBooks
-            //   savedBooksState={savedBooksState} 
+                savedBooksState={savedBooksState}
             />
         </>
     );

@@ -1,5 +1,5 @@
 import React from 'react';
-import BookCard from '../BookCard';
+import SearchedBookCard from '../SearchedBookCard';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Container from 'react-bootstrap/Container';
@@ -13,7 +13,8 @@ function Results(props) {
                     <Card>
                         <Card.Body>
                             <Card.Title>Results</Card.Title>
-                            {props.searchResultsState.items.map((book) => (<BookCard
+                            {console.log(props.searchResultsState.items)}
+                            {props.searchResultsState.items.map((book) => (<SearchedBookCard
                                 title={book.volumeInfo.title}
                                 subtitle={book.volumeInfo.subtitle}
                                 authors={book.volumeInfo.authors}

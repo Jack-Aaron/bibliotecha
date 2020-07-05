@@ -1,10 +1,12 @@
 import React from 'react';
-import BookCard from '../BookCard';
+import SavedBookCard from '../SavedBookCard';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Container from 'react-bootstrap/Container';
 
 function SavedBooks(props) {
+
+    const shit = props.savedBooksState
 
     return (
         <>
@@ -13,15 +15,16 @@ function SavedBooks(props) {
                     <Card>
                         <Card.Body>
                             <Card.Title>Saved Books</Card.Title>
-                            {/* {props.searchResultsState.items.map((book) => (<BookCard
-                                title={book.volumeInfo.title}
-                                subtitle={book.volumeInfo.subtitle}
-                                authors={book.volumeInfo.authors}
-                                description={book.volumeInfo.description}
-                                image={book.volumeInfo.imageLinks.thumbnail}
-                                link={book.volumeInfo.infoLink}
-                                id={book.id}
-                            />))} */}
+
+                            {props.savedBooksState.map((book) => (<SavedBookCard
+                                    title={book.title}
+                                    subtitle={book.subtitle}
+                                    authors={book.authors}
+                                    description={book.description}
+                                    image={book.image}
+                                    link={book.link}
+                                    id={book.id}
+                                />))}
                         </Card.Body>
                     </Card>
                 </CardGroup>
