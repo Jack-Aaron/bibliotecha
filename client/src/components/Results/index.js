@@ -14,12 +14,12 @@ function Results(props) {
                         <Card.Body>
                             <Card.Title>Results</Card.Title>
                             {console.log(props.searchResultsState.items)}
-                            {props.searchResultsState.items.map((book) => (<SearchedBookCard
+                            {props.searchResultsState.items.map(book => (<SearchedBookCard
                                 title={book.volumeInfo.title}
                                 subtitle={book.volumeInfo.subtitle}
                                 authors={book.volumeInfo.authors}
                                 description={book.volumeInfo.description}
-                                image={book.volumeInfo.imageLinks.thumbnail}
+                                image={`http://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api`}
                                 link={book.volumeInfo.infoLink}
                                 id={book.id}
                             />))}

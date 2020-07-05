@@ -21,7 +21,7 @@ function SearchedBookCard(props) {
                     subtitle: res.data.volumeInfo.subtitle,
                     authors: res.data.volumeInfo.authors,
                     description: res.data.volumeInfo.description,
-                    image: res.data.volumeInfo.imageLinks.thumbnail,
+                    image: `http://books.google.com/books/content?id=${res.data.id}&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api`,
                     link: res.data.volumeInfo.infoLink,
                     googleId: res.data.id,
                 })
@@ -30,7 +30,7 @@ function SearchedBookCard(props) {
                     subtitle: res.data.volumeInfo.subtitle,
                     authors: res.data.volumeInfo.authors,
                     description: res.data.volumeInfo.description,
-                    image: res.data.volumeInfo.imageLinks.thumbnail,
+                    image: `http://books.google.com/books/content?id=${res.data.id}&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api`,
                     link: res.data.volumeInfo.infoLink,
                     googleId: res.data.id,
                 }).then()
@@ -54,7 +54,8 @@ function SearchedBookCard(props) {
                         <Col>
                             <Card.Title>{props.title}</Card.Title>
                             <Card.Subtitle>{props.subtitle}</Card.Subtitle>
-                            <Card.Text>{'Written by ' + props.authors}</Card.Text>
+                            <Card.Text>{'Written by ' + props.authors.join(', ')
+                            .replace(/, ([^,]*)$/, ' and $1')}</Card.Text>
                         </Col>
                         <Col xs='auto'>
                             <Row style={{ float: 'right', marginRight: '0.66vmin' }}>

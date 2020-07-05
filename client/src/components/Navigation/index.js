@@ -17,7 +17,7 @@ function Navigation(props) {
                         <Nav.Link
                             as={Link}
                             to={'/'}
-                            className={window.location.pathname === '/' ? 'nav-link active' : 'nav-link'}
+                            className={window.location.pathname === '/search' ? 'nav-link active' : 'nav-link'}
                         >Search Books</Nav.Link>
                         <Nav.Link
                             as={Link}

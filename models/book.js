@@ -23,7 +23,7 @@ const bookSchema = new mongoose.Schema({
     // url for thumbnail image
     image: {
         type: String,
-        default: ''
+        default: '',
     },
     // url for book information link
     link: {

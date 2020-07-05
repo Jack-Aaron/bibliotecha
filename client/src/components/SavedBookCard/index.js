@@ -13,35 +13,13 @@ function SavedBookCard(props) {
     }
 
     const handleDelete = () => {
-        API.searchBooksById(props.id)
-            .then(res => {
-                console.log(res.data)
-                console.log({
-                    title: res.data.volumeInfo.title,
-                    subtitle: res.data.volumeInfo.subtitle,
-                    authors: res.data.volumeInfo.authors,
-                    description: res.data.volumeInfo.description,
-                    image: res.data.volumeInfo.imageLinks.thumbnail,
-                    link: res.data.volumeInfo.infoLink,
-                    googleId: res.data.id,
-                })
-                let htmlString 
-                API.saveBook({
-                    title: res.data.volumeInfo.title,
-                    subtitle: res.data.volumeInfo.subtitle,
-                    authors: res.data.volumeInfo.authors,
-                    description: res.data.volumeInfo.description,
-                    image: res.data.volumeInfo.imageLinks.thumbnail,
-                    link: res.data.volumeInfo.infoLink,
-                    googleId: res.data.id,
-                }).then()
-                    .catch(err => console.log(err))
-            })
+        API.deleteBook(props.id)
+            .then()
             .catch(err => console.log(err))
     }
 
     const renderDescription = (html) => {
-        const createMarkup = htmlString => ({__html: htmlString})
+        const createMarkup = htmlString => ({ __html: htmlString })
         return (
             <div dangerouslySetInnerHTML={createMarkup(html)}></div>
         )
@@ -55,7 +33,8 @@ function SavedBookCard(props) {
                         <Col>
                             <Card.Title>{props.title}</Card.Title>
                             <Card.Subtitle>{props.subtitle}</Card.Subtitle>
-                            <Card.Text>{'Written by ' + props.authors}</Card.Text>
+                            <Card.Text>{'Written by ' + props.authors.join(', ')
+                                .replace(/, ([^,]*)$/, ' and $1')}</Card.Text>
                         </Col>
                         <Col xs='auto'>
                             <Row style={{ float: 'right', marginRight: '0.66vmin' }}>
@@ -68,7 +47,7 @@ function SavedBookCard(props) {
                                 <Button
                                     className='SaveBtn'
                                     onClick={handleDelete}
-                                >Save
+                                >Delete
                                 </Button>
                             </Row>
                         </Col>

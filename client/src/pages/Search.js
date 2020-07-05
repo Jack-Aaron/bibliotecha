@@ -8,7 +8,8 @@ function Search(props) {
 
   const [searchResultsState, setSearchResultsState] = useState({
     items: [],
-    searchquery: ''
+    searchquery: '',
+    error: '',
   })
 
   const searchForm = { searchquery: '' }
@@ -28,7 +29,12 @@ function Search(props) {
         setSearchResultsState(res.data);
         setFormObject(searchForm)
       })
-        .catch(err => console.log(err))
+      .catch(err => {
+        if (err.response) {
+            console.log(err.response);
+            setSearchResultsState({ error: err.response.data.message });
+        }
+    })
     }
   };
 

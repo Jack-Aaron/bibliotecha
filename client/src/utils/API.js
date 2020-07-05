@@ -15,5 +15,8 @@ export default {
   },
   searchBooksById: function (id) {
     return axios.get(IDBASEURL + id);
+  },
+  deleteBook: function (id) {
+    return axios.delete('/api/books/' + id);
   }
 };
