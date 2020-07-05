@@ -8,7 +8,7 @@ function Saved(props) {
     const [savedBooksState, setSavedBooksState] = useState([])
 
     useEffect(() => {
-        API.getBooks()
+        API.getBooks.bind()
             .then(res => setSavedBooksState(res.data))
             .catch(err => console.log(err))
 
