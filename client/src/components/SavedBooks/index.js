@@ -15,7 +15,6 @@ function SavedBooks(props) {
                             <Card.Title>Saved Books</Card.Title>
 
                             {props.savedBooksState.map(book => (<SavedBookCard
-                                key={book._id}
                                 title={book.title}
                                 subtitle={book.subtitle}
                                 authors={book.authors}
