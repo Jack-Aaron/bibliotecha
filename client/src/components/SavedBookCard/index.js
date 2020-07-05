@@ -8,36 +8,44 @@ import Row from 'react-bootstrap/Row';
 
 function SavedBookCard(props) {
 
-    // const viewBook = () => {
-    //     window.open(props.link)
-    // }
+    const viewBook = () => {
+        window.open(props.link)
+    }
 
-    // const handleSaveClick = () => {
-    //     API.searchBooksById(props.id)
-    //         .then(res => {
-    //             console.log(res.data)
-    //             console.log({
-    //                 title: res.data.volumeInfo.title,
-    //                 subtitle: res.data.volumeInfo.subtitle,
-    //                 authors: res.data.volumeInfo.authors,
-    //                 description: res.data.volumeInfo.description,
-    //                 image: res.data.volumeInfo.imageLinks.thumbnail,
-    //                 link: res.data.volumeInfo.infoLink,
-    //                 googleId: res.data.id,
-    //             })
-    //             API.saveBook({
-    //                 title: res.data.volumeInfo.title,
-    //                 subtitle: res.data.volumeInfo.subtitle,
-    //                 authors: res.data.volumeInfo.authors,
-    //                 description: res.data.volumeInfo.description,
-    //                 image: res.data.volumeInfo.imageLinks.thumbnail,
-    //                 link: res.data.volumeInfo.infoLink,
-    //                 googleId: res.data.id,
-    //             }).then()
-    //                 .catch(err => console.log(err))
-    //         })
-    //         .catch(err => console.log(err))
-    // }
+    const handleDelete = () => {
+        API.searchBooksById(props.id)
+            .then(res => {
+                console.log(res.data)
+                console.log({
+                    title: res.data.volumeInfo.title,
+                    subtitle: res.data.volumeInfo.subtitle,
+                    authors: res.data.volumeInfo.authors,
+                    description: res.data.volumeInfo.description,
+                    image: res.data.volumeInfo.imageLinks.thumbnail,
+                    link: res.data.volumeInfo.infoLink,
+                    googleId: res.data.id,
+                })
+                let htmlString 
+                API.saveBook({
+                    title: res.data.volumeInfo.title,
+                    subtitle: res.data.volumeInfo.subtitle,
+                    authors: res.data.volumeInfo.authors,
+                    description: res.data.volumeInfo.description,
+                    image: res.data.volumeInfo.imageLinks.thumbnail,
+                    link: res.data.volumeInfo.infoLink,
+                    googleId: res.data.id,
+                }).then()
+                    .catch(err => console.log(err))
+            })
+            .catch(err => console.log(err))
+    }
+
+    const renderDescription = (html) => {
+        const createMarkup = htmlString => ({__html: htmlString})
+        return (
+            <div dangerouslySetInnerHTML={createMarkup(html)}></div>
+        )
+    }
 
     return (
         <>
@@ -53,13 +61,13 @@ function SavedBookCard(props) {
                             <Row style={{ float: 'right', marginRight: '0.66vmin' }}>
                                 <Button
                                     className='ViewBtn'
-                                    // onClick={viewBook.bind()}
+                                    onClick={viewBook.bind()}
                                     style={{ marginRight: '0.33vmin' }}
                                 >View
                                 </Button>
                                 <Button
                                     className='SaveBtn'
-                                    // onClick={handleSaveClick}
+                                    onClick={handleDelete}
                                 >Save
                                 </Button>
                             </Row>
@@ -78,7 +86,7 @@ function SavedBookCard(props) {
                                 }} />
                         </Col>
                         <Col style={{ marginTop: '1em' }}>
-                            <p style={{ fontSize: 'calc(0.66em + 0.66vmin)' }}>{props.description}</p>
+                            <p style={{ fontSize: 'calc(0.66em + 0.66vmin)' }}>{renderDescription(props.description)}</p>
                         </Col>
                     </Row>
                 </Card.Body>
