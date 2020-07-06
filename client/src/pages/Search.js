@@ -47,7 +47,7 @@ function Search(props) {
   };
 
   const showResults = (
-    <div>
+    <div style={{ marginBottom: '12vmax' }}>
       <Searchform
         handleChange={handleChange}
         handleFormSubmit={handleFormSubmit}
@@ -58,7 +58,7 @@ function Search(props) {
   );
 
   const noResults = (
-    <div>
+    <div style={{ marginBottom: '12vmax' }}>
       <Searchform
         handleChange={handleChange}
         handleFormSubmit={handleFormSubmit}

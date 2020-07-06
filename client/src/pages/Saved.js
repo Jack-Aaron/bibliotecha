@@ -5,10 +5,10 @@ import Spacer from '../components/Spacer';
 function Saved(props) {
 
 return (
-    <>
+    <div style={{ marginBottom: '12vmax' }}>
         <Spacer />
         <SavedBooks/>
-    </>
+    </div>
 );
 }
 

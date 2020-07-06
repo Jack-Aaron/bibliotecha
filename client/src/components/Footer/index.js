@@ -1,18 +1,24 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
+import './style.css';
 
-function Footer(props) {
+function Footer() {
     return (
-        <>
-            <Container>
-                <a href='https://jack-aaron.github.io/portfolio' target='_blank'
-                    rel='noopener noreferrer'
-                    style={{
-                        position: 'relative',
-                        top: 400
-                    }}>Jonathan Alpart 2020.</a>
-            </Container>
-        </>
+        <div className='footer'
+            style={{
+                position: 'fixed',
+                paddingBottom: '6vmin',
+                margin: 0,
+                lineHeight: '6vmax',
+                height: '6vmax', bottom: 0,
+                width: '100%',
+                backgroundColor: '#9DB4C0',
+                textAlign: 'center'
+            }}>
+            <a href='https://jack-aaron.github.io/portfolio'
+                target='_blank'
+                rel='noopener noreferrer'
+            >Jonathan Alpart 2020.</a>
+        </div>
     );
 }
 

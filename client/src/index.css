@@ -1,6 +1,8 @@
 body {
   margin: 0;
+  background-color: #E0FBFC !important;
   font-family: 'Grenze', serif !important;
+  color: #253237 !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

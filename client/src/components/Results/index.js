@@ -11,7 +11,7 @@ function Results(props) {
             <Container>
                 <CardGroup>
                     <Card>
-                        <Card.Body>
+                        <Card.Body style={{ backgroundColor: '#5C6B73 !important' }}>
                             <Card.Title>Results</Card.Title>
                             {props.searchResultsState.items.map(book => (<SearchedBookCard
                                 title={book.volumeInfo.title}
