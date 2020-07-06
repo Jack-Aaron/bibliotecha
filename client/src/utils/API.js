@@ -11,7 +11,7 @@ export default {
     return axios.post('/api/books/', bookData);
   },
   searchBooks: function (query) {
-    return axios.get(BASEURL + query)
+    return axios.get(BASEURL + query);
   },
   searchBooksById: function (id) {
     return axios.get(IDBASEURL + id);
