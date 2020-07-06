@@ -1,4 +1,7 @@
 import axios from 'axios';
+import openSocket from 'socket.io-client';
+// const socket = openSocket('https://protected-basin-70677.herokuapp.com/');
+const socket = openSocket('localhost:3000/');
 
 const BASEURL = 'https://www.googleapis.com/books/v1/volumes?q=';
 const IDBASEURL = 'https://www.googleapis.com/books/v1/volumes/';
@@ -18,5 +21,9 @@ export default {
   },
   deleteBook: function (id) {
     return axios.delete('/api/books/' + id);
+  },
+  notifyUser: function (cb) {
+    socket.on('timer', timestamp => cb(null, timestamp));
+    socket.emit('notifyUser', 100);
   }
 };

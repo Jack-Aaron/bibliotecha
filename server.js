@@ -16,7 +16,6 @@ io.on('connection', client => {
   })
 })
 
-
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
