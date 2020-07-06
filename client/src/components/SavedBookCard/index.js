@@ -12,11 +12,7 @@ function SavedBookCard(props) {
         window.open(props.link)
     }
 
-    const handleDelete = () => {
-        API.deleteBook(props.id)
-            .then()
-            .catch(err => console.log(err))
-    }
+
 
     const renderDescription = (html) => {
         const createMarkup = htmlString => ({ __html: htmlString })
@@ -46,7 +42,7 @@ function SavedBookCard(props) {
                                 </Button>
                                 <Button
                                     className='DeleteBtn'
-                                    onClick={handleDelete}
+                                    onClick={() => props.handleDelete(props.id)}
                                 >Delete
                                 </Button>
                             </Row>

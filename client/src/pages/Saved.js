@@ -5,24 +5,14 @@ import Spacer from '../components/Spacer';
 
 function Saved(props) {
 
-    const [savedBooksState, setSavedBooksState] = useState([])
-
-    useEffect(() => {
-        API.getBooks.bind()
-            .then(res => setSavedBooksState(res.data))
-            .catch(err => console.log(err))
 
 
-    })
-
-    return (
-        <>
-            <Spacer />
-            <SavedBooks
-                savedBooksState={savedBooksState}
-            />
-        </>
-    );
+return (
+    <>
+        <Spacer />
+        <SavedBooks/>
+    </>
+);
 }
 
 export default Saved;
