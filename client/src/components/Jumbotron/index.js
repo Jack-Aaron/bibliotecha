@@ -7,7 +7,7 @@ function Heading(props) {
             <Jumbotron style={{
                 textAlign: 'center'
             }}>
-                <h1>Google Books Search</h1>
+                <h1>Bibliotecha</h1>
                 <h3>Search for and Save your favorite books!</h3>
             </Jumbotron>
         </>

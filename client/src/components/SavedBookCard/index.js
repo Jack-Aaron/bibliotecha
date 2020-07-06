@@ -45,7 +45,7 @@ function SavedBookCard(props) {
                                 >View
                                 </Button>
                                 <Button
-                                    className='SaveBtn'
+                                    className='DeleteBtn'
                                     onClick={handleDelete}
                                 >Delete
                                 </Button>
