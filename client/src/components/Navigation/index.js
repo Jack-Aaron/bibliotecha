@@ -9,7 +9,8 @@ function Navigation(props) {
     return (
         <>
             <Navbar bg='light'>
-                <Navbar.Brand href='#search'>
+                <Navbar.Brand as={Link}
+                            to={'/'}>
                     <Image src={NavbarBrand} style={{ maxHeight: 40 }} fluid></Image>
                 </Navbar.Brand>
                 <Navbar.Collapse id="basic-navbar-nav">
