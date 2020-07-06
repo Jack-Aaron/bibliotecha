@@ -13,6 +13,7 @@ function Search(props) {
   })
 
   const searchForm = { searchquery: '' }
+
   const [formObject, setFormObject] = useState(searchForm)
 
   function handleChange(event) {
@@ -28,25 +29,48 @@ function Search(props) {
       }).then(res => {
         setSearchResultsState(res.data);
         setFormObject(searchForm)
+        didSearch()
       })
-      .catch(err => {
-        if (err.response) {
+        .catch(err => {
+          if (err.response) {
             console.log(err.response);
             setSearchResultsState({ error: err.response.data.message });
-        }
-    })
+          }
+        })
     }
   };
 
-  return (
-    <>
+  const [hasSearched, setHasSearched] = useState(false);
+
+  function didSearch() {
+    setHasSearched(true)
+  };
+
+  const showResults = (
+    <div>
       <Searchform
         handleChange={handleChange}
         handleFormSubmit={handleFormSubmit}
         searchQueryValue={formObject.searchquery || ''} />
       <Spacer />
       <Results searchResultsState={searchResultsState} />
-    </>
+    </div>
+  );
+
+  const noResults = (
+    <div>
+      <Searchform
+        handleChange={handleChange}
+        handleFormSubmit={handleFormSubmit}
+        searchQueryValue={formObject.searchquery || ''} />
+      <Spacer />
+    </div>
+  );
+
+  return (
+    <div>
+      {hasSearched === true ? showResults : noResults}
+    </div>
   );
 }
 

@@ -13,7 +13,6 @@ function Results(props) {
                     <Card>
                         <Card.Body>
                             <Card.Title>Results</Card.Title>
-                            {console.log(props.searchResultsState.items)}
                             {props.searchResultsState.items.map(book => (<SearchedBookCard
                                 title={book.volumeInfo.title}
                                 subtitle={book.volumeInfo.subtitle}
