@@ -3,7 +3,7 @@
 ### Overview
 User has the option to "View" a book, bringing them to the book on Google Books, or "Save" a book, saving it to the Mongo database. This application was written from scratch using the MERN stack.
 
-![Books Search demo gif](/demo.gif?raw=true)
+![Books Search demo gif](/demo.gif.gif?raw=true)
 
 ### Technologies Used
 * HTML/CSS
