@@ -5,6 +5,14 @@ User has the option to "View" a book, bringing them to the book on Google Books,
 
 ![Books Search demo gif](/demo.gif.gif?raw=true)
 
+### Development Process
+
+Since this application uses a third-party API provided by Google, it was important to first understand the object response when calling the API so it could be displayed in a View to the user in a standardized fashion. I modified the URL constructor in a way that satisfied all types of book queries from the search bar.
+
+Sometimes a book description would contain HTML, so I had to learn how to unescape HTML code in React in order to always display descriptions properly.
+
+I used React-Bootstrap for a clean and simple design that mirrors a Google application, but also added a "bookish" style to make it unique.
+
 ### Technologies Used
 * HTML/CSS
 * Javascript ES6
